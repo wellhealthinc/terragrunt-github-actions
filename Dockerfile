@@ -4,8 +4,10 @@ RUN ["/bin/sh", "-c", "apk add --update --no-cache bash ca-certificates curl git
 
 COPY ["src", "/src/"]
 
-RUN pip install hvac
+RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py && python get-pip.py
 
-RUN pip3 install hvac
+RUN pip install hvac==0.10.10
+
+RUN pip3 install hvac==0.10.10
 
 ENTRYPOINT ["/src/main.sh"]
