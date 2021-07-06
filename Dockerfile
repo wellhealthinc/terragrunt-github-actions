@@ -6,4 +6,6 @@ COPY ["src", "/src/"]
 
 RUN pip install hvac
 
+RUN pip3 install hvac
+
 ENTRYPOINT ["/src/main.sh"]
