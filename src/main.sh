@@ -16,6 +16,7 @@ function hasPrefix {
 }
 
 function parseInputs {
+  echo "ENV = ${env}"
   # Required inputs
   if [ "${INPUT_TF_ACTIONS_VERSION}" != "" ]; then
     tfVersion=${INPUT_TF_ACTIONS_VERSION}
