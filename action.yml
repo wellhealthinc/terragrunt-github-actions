@@ -50,9 +50,9 @@ runs:
     - run: ${{ github.action_path }}/src/main.sh
       shell: bash
       env:
-        tf_actions_subcommand: ${{inputs.tf_actions_subcommand}}
-        tf_actions_binary: ${{inputs.tf_actions_binary}}
-        INPUT_tf_actions_version: ${{inputs.tf_actions_version}}
+        INPUT_TF_ACTIONS_SUBCOMMAND: ${{inputs.tf_actions_subcommand}}
+        INPUT_TF_ACTIONS_BINARY: ${{inputs.tf_actions_binary}}
+        INPUT_TF_ACTIONS_VERSION: ${{inputs.tf_actions_version}}
         INPUT_TG_ACTIONS_VERSION: ${{inputs.tg_actions_version}}
         INPUT_TF_ACTIONS_CLI_CREDENTIALS_HOSTNAME: ${{inputs.tf_actions_cli_credentials_hostname}}
         INPUT_TF_ACTIONS_CLI_CREDENTIALS_TOKEN: ${{inputs.tf_actions_cli_credentials_token}}
