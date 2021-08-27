@@ -109,7 +109,7 @@ function installTerraform {
   echo "Terraform version installed = $(/usr/local/bin/terraform -v )"
 
   echo "Unzipping Terraform v${tfVersion}"
-  unzip -d /usr/local/bin /tmp/terraform_${tfVersion} #&> /dev/null
+  unzip -o -d /usr/local/bin /tmp/terraform_${tfVersion} #&> /dev/null
   if [ "${?}" -ne 0 ]; then
     echo "Failed to unzip Terraform v${tfVersion}"
     exit 1
