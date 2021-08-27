@@ -59,4 +59,3 @@ runs:
         INPUT_TF_ACTIONS_COMMENT: ${{inputs.tf_actions_comment}}
         INPUT_TF_ACTIONS_WORKING_DIR: ${{inputs.tf_actions_working_dir}}
         INPUT_TF_ACTIONS_FMT_WRITE: ${{inputs.tf_actions_fmt_write}}
-        TMP_DIR: ${{{runner.temp}}}
