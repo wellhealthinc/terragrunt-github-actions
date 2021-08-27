@@ -45,8 +45,8 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: sudo apt-get update && sudo apt-get install  ca-certificates curl git jq openssh-client
-      shell: bash
+    # - run: sudo apt-get update && sudo apt-get install  ca-certificates curl git jq openssh-client
+      # shell: bash
     - run: ${{ github.action_path }}/src/main.sh
       shell: bash
       env:
