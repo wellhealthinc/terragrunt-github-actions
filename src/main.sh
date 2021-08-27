@@ -106,6 +106,7 @@ function installTerraform {
     exit 1
   fi
   echo "Successfully downloaded Terraform v${tfVersion}"
+  echo "Terraform version installed = $(/usr/local/bin/terraform -v )"
 
   echo "Unzipping Terraform v${tfVersion}"
   unzip -d /usr/local/bin /tmp/terraform_${tfVersion} #&> /dev/null
