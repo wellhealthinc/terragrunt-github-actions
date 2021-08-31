@@ -16,7 +16,6 @@ function hasPrefix {
 }
 
 function parseInputs {
-  echo "ENV = $(env)"
   # Required inputs
   if [ "${INPUT_TF_ACTIONS_VERSION}" != "" ]; then
     tfVersion=${INPUT_TF_ACTIONS_VERSION}
@@ -106,16 +105,14 @@ function installTerraform {
     exit 1
   fi
   echo "Successfully downloaded Terraform v${tfVersion}"
-  echo "Terraform version installed before = $(/usr/local/bin/terraform -v )"
 
   echo "Unzipping Terraform v${tfVersion}"
-  unzip -o -d /usr/local/bin /tmp/terraform_${tfVersion} #&> /dev/null
+  unzip -o -d /usr/local/bin /tmp/terraform_${tfVersion} &> /dev/null
   if [ "${?}" -ne 0 ]; then
     echo "Failed to unzip Terraform v${tfVersion}"
     exit 1
   fi
   echo "Successfully unzipped Terraform v${tfVersion}"
-  echo "Terraform version installed after = $(/usr/local/bin/terraform -v )"
 }
 
 function installTerragrunt {
