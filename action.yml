@@ -43,5 +43,19 @@ outputs:
   tf_actions_fmt_written:
     description: 'Whether or not the Terragrunt formatting was written to source files.'
 runs:
-  using: 'docker'
-  image: './Dockerfile'
+  using: 'composite'
+  steps:
+    # - run: sudo apt-get update && sudo apt-get install  ca-certificates curl git jq openssh-client
+      # shell: bash
+    - run: ${{ github.action_path }}/src/main.sh
+      shell: bash
+      env:
+        INPUT_TF_ACTIONS_SUBCOMMAND: ${{inputs.tf_actions_subcommand}}
+        INPUT_TF_ACTIONS_BINARY: ${{inputs.tf_actions_binary}}
+        INPUT_TF_ACTIONS_VERSION: ${{inputs.tf_actions_version}}
+        INPUT_TG_ACTIONS_VERSION: ${{inputs.tg_actions_version}}
+        INPUT_TF_ACTIONS_CLI_CREDENTIALS_HOSTNAME: ${{inputs.tf_actions_cli_credentials_hostname}}
+        INPUT_TF_ACTIONS_CLI_CREDENTIALS_TOKEN: ${{inputs.tf_actions_cli_credentials_token}}
+        INPUT_TF_ACTIONS_COMMENT: ${{inputs.tf_actions_comment}}
+        INPUT_TF_ACTIONS_WORKING_DIR: ${{inputs.tf_actions_working_dir}}
+        INPUT_TF_ACTIONS_FMT_WRITE: ${{inputs.tf_actions_fmt_write}}
